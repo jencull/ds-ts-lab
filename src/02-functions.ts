@@ -97,3 +97,26 @@ function findFriends(
 
 console.log(findFriends(friends, (friend) => friend.name.startsWith("Pa")));
 console.log(findFriends(friends, (friend) => friend.age < 35));
+
+function addInterest(friend: Friend, interest: string): string[] {
+  // Option 1: The friend already has interests so the array already exists
+  // Option 2: The friend has no interests yet so no array exists
+  // We check for Option 2 using 'if (!friend.interests)'
+  if (!friend.interests) {
+    // If its true, we create an empty array for them.
+    // Now they have an array, so we can use .push() safely.
+    friend.interests = [];
+  }
+
+  // Add the new interest to the array
+  // only adds 1 interest because in function setup
+  // function addInterest(friend: Friend, interest: string): 
+  // takes in one interest arg. 
+  friend.interests.push(interest);
+
+  // Return the updated list
+  return friend.interests;
+}
+
+//console.log(addInterest(friends[0], 'Politics'));
+console.log(addInterest(friends[1], 'music'));
