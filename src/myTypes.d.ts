@@ -1,8 +1,12 @@
 export interface Friend {
     name: string;
     phone: string;
-    age: number
+    dob? : Date;
+    age: number;
+    interests? : string[]
 }
+
+// ? makes the variable optional
 
 export interface Colleague {
     name: string;

@@ -1,0 +1,1 @@
+To run script: npx ts-node <name of file>
